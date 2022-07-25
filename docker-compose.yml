@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  postgres:
+    env_file:
+      - ./.env
+    image: "postgres:${POSTGRES_VERSION}"
+    restart: always
+    environment:
+      - "POSTGRES_DB=${POSTGRES_USER}"
+      - "POSTGRES_USER=${POSTGRES_USER}"
+      - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD}"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '2137:5432'
+volumes:
+  postgres: null
