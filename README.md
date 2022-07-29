@@ -1,4 +1,2 @@
 # Scraper
 
-
-bajo jajo
